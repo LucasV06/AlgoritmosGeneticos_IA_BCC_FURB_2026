@@ -1,0 +1,1 @@
+# AlgoritmosGeneticos_IA_BCC_FURB_2026
