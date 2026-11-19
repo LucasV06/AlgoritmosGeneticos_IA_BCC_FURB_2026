@@ -75,7 +75,7 @@ def cycle_crossover(pai1, pai2):
     # Escolhe um índice/local aleatório dentro do cromossomo
     pos = np.random.randint(0, n)
 
-    # Se nessa posição os valores forem iguais, não há troca a realizar
+    # Se nessa posição os valores forem iguais, não há troca para realizar
     if filho1[pos].id == filho2[pos].id:
         return filho1, filho2
 
@@ -158,7 +158,7 @@ historico_melhor_custo = []
 
 
 # ==============================================================================
-# LOOP GERACIONAL (10.000 ITERAÇÕES)
+# LOOP GERACIONAL (20.000 ITERAÇÕES)
 # ==============================================================================
 
 print(f"Iniciando o Algoritmo Genético por {NUM_GERACOES} gerações...\n")
@@ -171,7 +171,7 @@ for geracao in range(NUM_GERACOES):
         avaliados.append((cromossomo, custo))
 
     # Ordena do mais apto ao menos apto (menor distância é o mais apto)
-    avaliados.sort(key=lambda ind: ind[1])
+    avaliados.sort(key=lambda ind: ind[1]) # ARRUMAR
 
     # Guarda o melhor custo desta geração
     melhor_da_geracao, custo_da_geracao = avaliados[0]
@@ -182,7 +182,7 @@ for geracao in range(NUM_GERACOES):
         melhor_solucao_global = list(melhor_da_geracao)
 
     # Exibe o progresso periodicamente no console
-    if (geracao + 1) % 1000 == 0 or geracao == 0:
+    if (geracao + 1) % 2000 == 0 or geracao == 0:
         print(f"Geração {geracao + 1:5d}/{NUM_GERACOES} | Custo Atual: {custo_da_geracao:.5f} | Melhor Global: {melhor_custo_global:.5f}")
 
     # Mantém os 10 melhores da população atual (50% de renovação)
