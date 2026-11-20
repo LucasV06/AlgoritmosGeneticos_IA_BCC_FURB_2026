@@ -1,3 +1,8 @@
+# EQUIPE
+# Cauã Fernando Bertolini
+# Eduarda Dagnoni Mazureck
+# Fabian Formento
+
 import math
 import numpy as np
 import matplotlib.pyplot as plt
